@@ -5,7 +5,11 @@
 
 // add AuthorRepository interface to repositories package
 
-// add AuthorService interface to services package
+// add AuthorRepositoryImpl class to repositories package
+
+// add AuthorService class to services package
+
+// add AuthorServiceImpl interface to services package
 
 // add AuthorMapper interface to mappers package
 
