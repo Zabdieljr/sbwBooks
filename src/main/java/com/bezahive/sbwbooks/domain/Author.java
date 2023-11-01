@@ -96,5 +96,4 @@ public class Author {
         return "Author [firstName=" + firstName + ", id=" + id + ", lastName=" + lastName + "]";
     }
 
-
 }

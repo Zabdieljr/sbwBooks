@@ -21,7 +21,6 @@ public class SbwBooksApplication {
         SpringApplication.run(SbwBooksApplication.class, args);
     }
 
-
     // display a: we are online message on console
 
     @Bean
