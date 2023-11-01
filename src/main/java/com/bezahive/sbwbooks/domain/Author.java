@@ -3,7 +3,6 @@ package com.bezahive.sbwbooks.domain;
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
 import java.util.Date;
 
 /**
@@ -91,9 +90,23 @@ public class Author {
         this.createdDate = createdDate;
     }
 
+
+    // add toString method
     @Override
     public String toString() {
         return "Author [firstName=" + firstName + ", id=" + id + ", lastName=" + lastName + "]";
     }
+
+    // add equals and hashcode methods
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (!(obj instanceof Author))
+            return false;
+        return id != null && id.equals(((Author) obj).getId());
+    }
+
+
 
 }
