@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaAuditing
 // enable Jpa Repositories
 @EnableJpaRepositories(basePackages = "com.bezahive.sbwbooks.repositories")
+
 public class SbwBooksApplication {
 
     public static void main(String[] args) {
