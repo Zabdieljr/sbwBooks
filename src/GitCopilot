@@ -1,0 +1,21 @@
+// add to java package a domain, controllers, repositories, services and mappers packages
+
+
+// add Author Class to domain package
+
+// add AuthorRepository interface to repositories package
+
+// add AuthorService interface to services package
+
+// add AuthorMapper interface to mappers package
+
+// add AuthorController class to controllers package
+
+// add AuthorDto class to dto package
+
+// add AuthorDtoMapper interface to mappers package
+
+// add AuthorDtoMapperImpl class to mappers package
+
+// add AuthorDtoMapperTest class to mappers package
+
