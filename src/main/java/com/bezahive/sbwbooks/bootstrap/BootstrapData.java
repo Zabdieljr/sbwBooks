@@ -59,7 +59,7 @@ public class BootstrapData implements CommandLineRunner {
         noEJBSaved.getAuthors().add(rodSaved);
 
 
-
+        //persist the data
         authorRepository.save(ericSaved);
         authorRepository.save(rodSaved);
     // save repositories
