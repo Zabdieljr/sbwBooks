@@ -24,6 +24,10 @@ public class BootstrapData implements CommandLineRunner {
     // add run method
     @Override
     public void run(String... args) throws Exception {
+        //print loading data
+        System.out.println("Loading Data");
+
+
         // add author and book objects
         Author eric = new Author();
         eric.setFirstName("Eric");
