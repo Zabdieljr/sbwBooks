@@ -1,18 +1,15 @@
 package com.bezahive.sbwbooks.domain;
-
-
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 // add programmer comments
 /**
  * Zabdiel Arenas 2023
  * https://github.com/Zabdieljr/sbwBooks
  */
-
-
 
 // add Entity annotation to make this class a JPA entity
 @Entity
@@ -32,8 +29,6 @@ public class Book {
 
     // private String title and ibsn
     // add Column annotation to specify the column name
-
-
     @Column(name = "isbn")
     private String isbn;
 
@@ -46,6 +41,25 @@ public class Book {
     @Temporal(TemporalType.TIMESTAMP)
     @CreatedDate
     private Date createdDate;
+
+    // add ManyToMany annotation mapped by authors
+    @ManyToMany
+    // add JoinTable annotation to specify the join table name
+    @JoinTable(name = "book_author", joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "author_id"))
+
+    private Set<Author> authors= new HashSet<>();
+
+
+
+    //add getter and setter for authors
+    public Set<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(Set<Author> authors) {
+        this.authors = authors;
+    }
 
     // add default constructor
     public Book() {

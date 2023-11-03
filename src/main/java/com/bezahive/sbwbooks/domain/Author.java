@@ -4,13 +4,13 @@ import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
     * Zabdiel Arenas 2023
      * https://github.com/Zabdieljr/sbwBooks
     */
-
-// add entity annotation
 @Entity
 //add entity auditing listener annotation
 @EntityListeners(AuditingEntityListener.class)
@@ -44,8 +44,23 @@ public class Author {
     @CreatedDate
     private Date createdDate;
 
+    // author to books JPA mapping
+    // add ManyToMany annotation mapped by authors
+    @ManyToMany(mappedBy = "authors", cascade = CascadeType.ALL)
+    private Set<Book> books = new HashSet<>();
+
+    // add getter and setter for books
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
+    }
 
     // add default constructor
+
+
         public Author() {
     }
     // add parameterized constructor
