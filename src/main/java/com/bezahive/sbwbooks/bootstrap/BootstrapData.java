@@ -3,8 +3,10 @@ package com.bezahive.sbwbooks.bootstrap;
 
 import com.bezahive.sbwbooks.domain.Author;
 import com.bezahive.sbwbooks.domain.Book;
+import com.bezahive.sbwbooks.domain.Publisher;
 import com.bezahive.sbwbooks.repositories.AuthorRepository;
 import com.bezahive.sbwbooks.repositories.BookRepository;
+import com.bezahive.sbwbooks.repositories.PublisherRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,10 +17,14 @@ public class BootstrapData implements CommandLineRunner {
     // add author and book repositories
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
+    // add publisher repository
+    private final PublisherRepository publisherRepository;
+
     // add constructor
-    public BootstrapData(AuthorRepository authorRepository, BookRepository bookRepository) {
+    public BootstrapData(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
+        this.publisherRepository = publisherRepository;
     }
 
     // add run method
@@ -62,6 +68,20 @@ public class BootstrapData implements CommandLineRunner {
         dddSaved.getAuthors().add(ericSaved);
         noEJBSaved.getAuthors().add(rodSaved);
 
+        // add publisher
+        Publisher publisher = new Publisher();
+        publisher.setPublisherName("S&S");
+        publisher.setAddress("123 Main St");
+        publisher.setCity("New York");
+        publisher.setState("NY");
+        publisher.setZipCode("10001");
+        publisherRepository.save(publisher);
+        // add publisher to book
+        dddSaved.setPublisher(publisher);
+        noEJBSaved.setPublisher(publisher);
+
+
+
 
         //persist the data
         authorRepository.save(ericSaved);
@@ -74,6 +94,10 @@ public class BootstrapData implements CommandLineRunner {
 
 
     }
+
+
+
+
 
 
 
