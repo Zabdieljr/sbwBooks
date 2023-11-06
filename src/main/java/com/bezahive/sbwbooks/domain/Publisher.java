@@ -56,7 +56,6 @@ public class Publisher {
     }
     // add getter and setter for books
 
-
     public Long getId() {
         return id;
     }
