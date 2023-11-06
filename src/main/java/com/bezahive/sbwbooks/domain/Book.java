@@ -133,4 +133,12 @@ public class Book {
         return id != null && id.equals(((Book) obj).getId());
     }
 
+    // add set publisher method
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
+
+
+
+
 }
