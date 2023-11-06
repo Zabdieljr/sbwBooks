@@ -51,6 +51,19 @@ public class Book {
     private Set<Author> authors= new HashSet<>();
 
 
+    // author to publisher JPA mapping
+    // add ManyToOne annotation mapped by publisher
+
+    @ManyToOne
+    // add JoinColumn annotation to specify the join column name
+    @JoinColumn(name = "publisher_id")
+    private Publisher publisher;
+
+
+
+
+
+
 
     //add getter and setter for authors
     public Set<Author> getAuthors() {
