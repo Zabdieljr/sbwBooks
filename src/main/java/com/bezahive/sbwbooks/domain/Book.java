@@ -60,10 +60,6 @@ public class Book {
     @JoinColumn(name = "publisher_id")
     private Publisher publisher;
 
-
-
-
-
     //add getter and setter for authors
     public Set<Author> getAuthors() {
         return authors;

@@ -7,6 +7,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 // add extends CrudRepository
 public interface PublisherRepository extends CrudRepository<Publisher, Long> {
+// add find all method
+    Iterable<Publisher> findAll();
+
+    // add find by publisher name method
+    Publisher findByPublisherName(String publisherName);
 
 
 }
