@@ -35,7 +35,6 @@ public class Book {
     @Column(name = "title")
     private String title;
 
-
     //add Temporal TimeStamp annotation and a @CreatedDate annotation to specify the createdDate column name
     @Column(name = "created_date")
     @Temporal(TemporalType.TIMESTAMP)
