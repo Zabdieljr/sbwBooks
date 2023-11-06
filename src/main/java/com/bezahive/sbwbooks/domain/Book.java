@@ -52,11 +52,16 @@ public class Book {
 
     // author to publisher JPA mapping
     // add ManyToOne annotation mapped by publisher
-
+    // add join table annotation
+    @JoinTable(name = "book_publisher", joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "publisher_id"))
     @ManyToOne
     // add JoinColumn annotation to specify the join column name
     @JoinColumn(name = "publisher_id")
     private Publisher publisher;
+
+
+
 
 
     //add getter and setter for authors

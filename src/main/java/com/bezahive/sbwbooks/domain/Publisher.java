@@ -40,8 +40,15 @@ public class Publisher {
     // add OneToMany annotation mapped by books
     @OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL)
     private Set<Book> books = new HashSet<>();
+   // add JoinTable annotation to specify the join table name
 
-  // add constructor
+
+
+
+
+
+
+      // add constructor
     public Publisher() {
     }
 
